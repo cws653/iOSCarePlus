@@ -74,6 +74,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF0A77E2579FA0F00FEF32B /* Build configuration list for PBXNativeTarget "iOSCarePlus" */;
 			buildPhases = (
+				9D0652752580FEF000F2D186 /* ShellScript */,
 				9DF0A7662579FA0E00FEF32B /* Sources */,
 				9DF0A7672579FA0E00FEF32B /* Frameworks */,
 				9DF0A7682579FA0E00FEF32B /* Resources */,
@@ -131,6 +132,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D0652752580FEF000F2D186 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script oif which swiftlint >/dev/null; then\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DF0A7662579FA0E00FEF32B /* Sources */ = {
