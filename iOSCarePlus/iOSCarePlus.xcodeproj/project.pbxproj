@@ -15,6 +15,20 @@
 		9DF0A77A2579FA0F00FEF32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0A7782579FA0F00FEF32B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		9D30C9A8258710BA00A3B5FA /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = folder.imagecatalog;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# actool\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		9DF0A76A2579FA0E00FEF32B /* iOSCarePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCarePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF0A76D2579FA0E00FEF32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +94,7 @@
 				9DF0A7682579FA0E00FEF32B /* Resources */,
 			);
 			buildRules = (
+				9D30C9A8258710BA00A3B5FA /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
