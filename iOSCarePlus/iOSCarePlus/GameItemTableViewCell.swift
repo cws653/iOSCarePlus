@@ -19,7 +19,6 @@ class GameItemTableViewCell: UITableViewCell {
     @IBOutlet private weak var gameTitleLable: UILabel!
     @IBOutlet private weak var gameOriginPrice: UILabel!
     @IBOutlet private weak var gameCurrentPrice: UILabel!
-    
     func setModel(_ model: GameItemModel) {
         self.model = model
     }

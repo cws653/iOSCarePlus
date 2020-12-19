@@ -42,7 +42,9 @@ extension GameListViewController: UITableViewDataSource {
         guard let content = model?.contents[indexPath.row] else {
             return UITableViewCell()
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemTableViewCell", for: indexPath) as! GameItemTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemTableViewCell", for: indexPath) as? GameItemTableViewCell  else {
+            return UITableViewCell()
+        }
         let model = GameItemModel(gameTitle: content.formalName, gameOriginPrice: 10000, gameDiscountPrice: nil, imaegeURL: content.heroBannerURL)
         cell.setModel(model)
         return cell
