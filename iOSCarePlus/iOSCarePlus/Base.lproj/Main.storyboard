@@ -48,7 +48,7 @@
                             <constraint firstAttribute="bottom" secondItem="Ncd-PH-9xh" secondAttribute="bottom" id="inv-vf-cGo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="pencil.circle" catalog="system" id="oh6-vM-CLD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" selectedImage="homeIcon" id="oh6-vM-CLD"/>
                     <connections>
                         <outlet property="backgroundImageViewLeadingConstraint" destination="Ina-7I-r8g" id="qKt-RE-r4L"/>
                         <outlet property="logoView" destination="zdb-G8-kFS" id="a5d-H8-Tq7"/>
@@ -57,7 +57,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="321"/>
+            <point key="canvasLocation" x="1561" y="-77"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="he2-4I-117">
+            <objects>
+                <viewController id="zCB-M1-a48" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bwi-En-2eu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dGQ-og-MHy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Game" image="gameIcon" selectedImage="gameIcon" id="nkh-la-aQE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bh-eb-DxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480" y="-81"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tKs-yq-I5e">
@@ -71,13 +87,15 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gOW-lV-Yrc"/>
                         <segue destination="edH-WG-pbc" kind="relationship" relationship="viewControllers" id="DaK-WP-N2S"/>
+                        <segue destination="zCB-M1-a48" kind="relationship" relationship="viewControllers" id="uMY-uC-wJp"/>
+                        <segue destination="6Ej-SD-UL4" kind="relationship" relationship="viewControllers" id="hYc-0f-piV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzi-qs-8QR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616" y="321"/>
         </scene>
-        <!--Game List View Controller-->
+        <!--Shop-->
         <scene sceneID="hr8-5G-icY">
             <objects>
                 <viewController id="edH-WG-pbc" customClass="GameListViewController" customModule="iOSCarePlus" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,6 +163,27 @@
                                             <outlet property="gameTitleLable" destination="xTH-cu-bYi" id="ODv-pu-x33"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IndicatorCell" rowHeight="105" id="qQd-w2-9XJ" customClass="IndicatorCell" customModule="iOSCarePlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="210" width="414" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQd-w2-9XJ" id="axC-PG-aql">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Gqr-7X-D3k">
+                                                    <rect key="frame" x="197" y="31" width="20" height="43"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gqr-7X-D3k" firstAttribute="top" secondItem="axC-PG-aql" secondAttribute="topMargin" constant="20" id="A1X-U0-03V"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gqr-7X-D3k" secondAttribute="bottom" constant="20" id="T7t-7E-z4J"/>
+                                                <constraint firstItem="Gqr-7X-D3k" firstAttribute="centerX" secondItem="axC-PG-aql" secondAttribute="centerX" id="fx3-yN-XHF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="Gqr-7X-D3k" id="sMZ-Nv-ycL"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="edH-WG-pbc" id="Mej-fy-XKB"/>
@@ -161,19 +200,38 @@
                             <constraint firstItem="gI4-OG-YgY" firstAttribute="trailing" secondItem="97p-9D-4mL" secondAttribute="trailing" id="rhw-qa-DfW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="2YU-LZ-9n6"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="shopIcon" selectedImage="shopIcon" id="2YU-LZ-9n6"/>
                     <connections>
                         <outlet property="tableView" destination="97p-9D-4mL" id="T4I-gZ-Dfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Trm-h4-LoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.5942028985507" y="1014.5089285714286"/>
+            <point key="canvasLocation" x="1561" y="629"/>
+        </scene>
+        <!--Hearts-->
+        <scene sceneID="o4d-uq-kDM">
+            <objects>
+                <viewController id="6Ej-SD-UL4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yRT-aF-wEp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3oC-K6-jJI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hearts" image="heartIcon" selectedImage="heartIcon" id="Mx5-3O-ksj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5z-aA-x8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480" y="629"/>
         </scene>
     </scenes>
     <resources>
         <image name="HomeBackground" width="2071" height="812"/>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="gameIcon" width="55" height="55"/>
+        <image name="heartIcon" width="55" height="55"/>
+        <image name="homeIcon" width="55" height="55"/>
+        <image name="shopIcon" width="55" height="55"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D77C7C825935D6200841853 /* GameItemCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D77C7C725935D6200841853 /* GameItemCodeTableViewCell.swift */; };
+		9D976EE925937824003AC8A0 /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D976EE825937824003AC8A0 /* IndicatorCell.swift */; };
 		9DF0A76E2579FA0E00FEF32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A76D2579FA0E00FEF32B /* AppDelegate.swift */; };
 		9DF0A7702579FA0E00FEF32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A76F2579FA0E00FEF32B /* SceneDelegate.swift */; };
 		9DF0A7722579FA0E00FEF32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A7712579FA0E00FEF32B /* ViewController.swift */; };
@@ -18,7 +20,7 @@
 		9DFBE376258A247700000DDF /* GameItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBE375258A247700000DDF /* GameItemTableViewCell.swift */; };
 		9DFBE37B258A2B1E00000DDF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9DFBE37A258A2B1E00000DDF /* Alamofire */; };
 		9DFBE37F258A2EA100000DDF /* NewGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBE37E258A2EA100000DDF /* NewGameResponse.swift */; };
-		9DFBE385258A341700000DDF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9DFBE384258A341700000DDF /* Kingfisher */; };
+		E138B428FFE884B02747624D /* Pods_iOSCarePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C764EB03FBE43AEE0F948A8 /* Pods_iOSCarePlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -36,6 +38,10 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		3BB117AADDF5ACA1B48E22A5 /* Pods-iOSCarePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCarePlus.release.xcconfig"; path = "Target Support Files/Pods-iOSCarePlus/Pods-iOSCarePlus.release.xcconfig"; sourceTree = "<group>"; };
+		3C764EB03FBE43AEE0F948A8 /* Pods_iOSCarePlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCarePlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D77C7C725935D6200841853 /* GameItemCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemCodeTableViewCell.swift; sourceTree = "<group>"; };
+		9D976EE825937824003AC8A0 /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
 		9DF0A76A2579FA0E00FEF32B /* iOSCarePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCarePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF0A76D2579FA0E00FEF32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF0A76F2579FA0E00FEF32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,7 @@
 		9DFBE371258A239800000DDF /* GameItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemModel.swift; sourceTree = "<group>"; };
 		9DFBE375258A247700000DDF /* GameItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemTableViewCell.swift; sourceTree = "<group>"; };
 		9DFBE37E258A2EA100000DDF /* NewGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameResponse.swift; sourceTree = "<group>"; };
+		B71CEE51576EC8CA5628A158 /* Pods-iOSCarePlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCarePlus.debug.xcconfig"; path = "Target Support Files/Pods-iOSCarePlus/Pods-iOSCarePlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,19 +62,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DFBE385258A341700000DDF /* Kingfisher in Frameworks */,
 				9DFBE37B258A2B1E00000DDF /* Alamofire in Frameworks */,
+				E138B428FFE884B02747624D /* Pods_iOSCarePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D77C7CB25935D7400841853 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				9DFBE36D258A1F6D00000DDF /* GameListViewController.swift */,
+				9D77C7CE25935DCA00841853 /* Model */,
+				9D77C7CC25935DA100841853 /* Cell */,
+			);
+			path = GameList;
+			sourceTree = "<group>";
+		};
+		9D77C7CC25935DA100841853 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9DFBE375258A247700000DDF /* GameItemTableViewCell.swift */,
+				9D77C7C725935D6200841853 /* GameItemCodeTableViewCell.swift */,
+				9D976EE825937824003AC8A0 /* IndicatorCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9D77C7CE25935DCA00841853 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DFBE371258A239800000DDF /* GameItemModel.swift */,
+				9DFBE37E258A2EA100000DDF /* NewGameResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9DF0A7612579FA0E00FEF32B = {
 			isa = PBXGroup;
 			children = (
 				9DF0A76C2579FA0E00FEF32B /* iOSCarePlus */,
 				9DF0A76B2579FA0E00FEF32B /* Products */,
+				BA393EBE453CE4D5B075E1C6 /* Pods */,
+				C521965403A9B446A72A6248 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,16 +123,30 @@
 				9DF0A76D2579FA0E00FEF32B /* AppDelegate.swift */,
 				9DF0A76F2579FA0E00FEF32B /* SceneDelegate.swift */,
 				9DF0A7712579FA0E00FEF32B /* ViewController.swift */,
-				9DFBE36D258A1F6D00000DDF /* GameListViewController.swift */,
-				9DFBE375258A247700000DDF /* GameItemTableViewCell.swift */,
-				9DFBE371258A239800000DDF /* GameItemModel.swift */,
-				9DFBE37E258A2EA100000DDF /* NewGameResponse.swift */,
+				9D77C7CB25935D7400841853 /* GameList */,
 				9DF0A7732579FA0E00FEF32B /* Main.storyboard */,
 				9DF0A7762579FA0F00FEF32B /* Assets.xcassets */,
 				9DF0A7782579FA0F00FEF32B /* LaunchScreen.storyboard */,
 				9DF0A77B2579FA0F00FEF32B /* Info.plist */,
 			);
 			path = iOSCarePlus;
+			sourceTree = "<group>";
+		};
+		BA393EBE453CE4D5B075E1C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B71CEE51576EC8CA5628A158 /* Pods-iOSCarePlus.debug.xcconfig */,
+				3BB117AADDF5ACA1B48E22A5 /* Pods-iOSCarePlus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C521965403A9B446A72A6248 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C764EB03FBE43AEE0F948A8 /* Pods_iOSCarePlus.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF0A77E2579FA0F00FEF32B /* Build configuration list for PBXNativeTarget "iOSCarePlus" */;
 			buildPhases = (
+				067125667FCADF5BA420E208 /* [CP] Check Pods Manifest.lock */,
 				9D0652752580FEF000F2D186 /* ShellScript */,
 				9DF0A7662579FA0E00FEF32B /* Sources */,
 				9DF0A7672579FA0E00FEF32B /* Frameworks */,
 				9DF0A7682579FA0E00FEF32B /* Resources */,
+				FC7DD62BCD8F0AB78D520085 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 				9D30C9A8258710BA00A3B5FA /* PBXBuildRule */,
@@ -117,7 +171,6 @@
 			name = iOSCarePlus;
 			packageProductDependencies = (
 				9DFBE37A258A2B1E00000DDF /* Alamofire */,
-				9DFBE384258A341700000DDF /* Kingfisher */,
 			);
 			productName = iOSCarePlus;
 			productReference = 9DF0A76A2579FA0E00FEF32B /* iOSCarePlus.app */;
@@ -148,7 +201,6 @@
 			mainGroup = 9DF0A7612579FA0E00FEF32B;
 			packageReferences = (
 				9DFBE379258A2B1E00000DDF /* XCRemoteSwiftPackageReference "Alamofire" */,
-				9DFBE383258A341700000DDF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 9DF0A76B2579FA0E00FEF32B /* Products */;
 			projectDirPath = "";
@@ -173,6 +225,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		067125667FCADF5BA420E208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSCarePlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D0652752580FEF000F2D186 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +264,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script oif which swiftlint >/dev/null; then\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		FC7DD62BCD8F0AB78D520085 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSCarePlus/Pods-iOSCarePlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSCarePlus/Pods-iOSCarePlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSCarePlus/Pods-iOSCarePlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -198,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFBE376258A247700000DDF /* GameItemTableViewCell.swift in Sources */,
+				9D976EE925937824003AC8A0 /* IndicatorCell.swift in Sources */,
+				9D77C7C825935D6200841853 /* GameItemCodeTableViewCell.swift in Sources */,
 				9DFBE36E258A1F6D00000DDF /* GameListViewController.swift in Sources */,
 				9DFBE37F258A2EA100000DDF /* NewGameResponse.swift in Sources */,
 				9DF0A7722579FA0E00FEF32B /* ViewController.swift in Sources */,
@@ -347,6 +440,7 @@
 		};
 		9DF0A77F2579FA0F00FEF32B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71CEE51576EC8CA5628A158 /* Pods-iOSCarePlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +459,7 @@
 		};
 		9DF0A7802579FA0F00FEF32B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BB117AADDF5ACA1B48E22A5 /* Pods-iOSCarePlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -413,14 +508,6 @@
 				minimumVersion = 5.4.0;
 			};
 		};
-		9DFBE383258A341700000DDF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.15.8;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -428,11 +515,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9DFBE379258A2B1E00000DDF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		9DFBE384258A341700000DDF /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9DFBE383258A341700000DDF /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
