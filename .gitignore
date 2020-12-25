@@ -1,6 +1,14 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/swift,objective-c,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,objective-c,macos
+# Created by https://www.toptal.com/developers/gitignore/api/macos,swift,objective-c,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,swift,objective-c,xcode,cocoapods
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
 
 ### macOS ###
 # General
@@ -151,4 +159,21 @@ Dependencies/
 # https://github.com/johnno1962/injectionforxcode
 
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,objective-c,macos
+### Xcode ###
+# Xcode
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+
+
+
+## Gcc Patch
+/*.gcno
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,swift,objective-c,xcode,cocoapods
