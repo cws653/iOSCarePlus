@@ -12,6 +12,7 @@ class GameListViewController: UIViewController {
     @IBOutlet private weak var newButton: SelectTableButton!
     @IBOutlet private weak var saleButton: SelectTableButton!
     @IBOutlet private weak var selectedLineCenterConstraints: NSLayoutConstraint!
+    
     @IBAction private func newButtonTouchUp(_ sender: UIButton) {
         newButton.isSelected = true
         saleButton.isSelected = false
@@ -21,6 +22,9 @@ class GameListViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         selectedLineCenterConstraints.constant = 0
+        
+        resetPropertiesForURL()
+        newGameListApiCall(newGameListURL)
     }
     @IBAction private func saleButtonTouchUp(_ sender: UIButton) {
         newButton.isSelected = false
@@ -32,11 +36,20 @@ class GameListViewController: UIViewController {
             self?.selectedLineCenterConstraints.constant = constant
             self?.view.layoutIfNeeded()
         }
+        
+        resetPropertiesForURL()
+        newGameListApiCall(saleGameListURL)
     }
+    
     @IBOutlet private weak var tableView: UITableView!
+    
     private var newGameListURL: String {
         "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
+    private var saleGameListURL: String {
+        "https://ec.nintendo.com/api/KR/ko/search/sales?count=\(newCount)&offset=\(newOffset)"
+    }
+    
     private var newCount: Int = 10
     private var newOffset: Int = 0
     private var isEnd: Bool = false
@@ -45,19 +58,27 @@ class GameListViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    private var checkURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
         setTableViewDefault()
-        newGameListApiCall()
+        newGameListApiCall(newGameListURL)
     }
     private func setTableViewDefault() {
         tableView.tableFooterView = UIView()
     }
     
-    private func newGameListApiCall() {
-        AF.request(newGameListURL).responseJSON { [weak self] response in
+    private func resetPropertiesForURL() {
+        newCount = 10
+        newOffset = 0
+        model = nil
+    }
+    
+    private func newGameListApiCall(_ url: String) {
+        self.checkURL = url
+        AF.request(url).responseJSON { [weak self] response in
             guard let data = response.data else { return }
             let decoder = JSONDecoder()
             guard let model = try? decoder.decode(NewGameResponse.self, from: data) else { return }
@@ -70,7 +91,6 @@ class GameListViewController: UIViewController {
                 }
                 self?.model?.contents.append(contentsOf: model.contents)
             }
-            //            self.tableView.reloadData()
         }
     }
 }
@@ -94,7 +114,12 @@ extension GameListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if isIndicatorCell(indexPath) {
             newOffset += 10
-            newGameListApiCall()
+            
+            if newButton.isSelected {
+                newGameListApiCall(newGameListURL)
+            } else if saleButton.isSelected {
+                newGameListApiCall(saleGameListURL)
+            }
         }
     }
     

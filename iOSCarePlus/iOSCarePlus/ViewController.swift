@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
     private func blinkLogoAnimation() {
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) { [weak self] in
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.autoreverse]) { [weak self] in
             self?.logoView.alpha = 0
         }
     }

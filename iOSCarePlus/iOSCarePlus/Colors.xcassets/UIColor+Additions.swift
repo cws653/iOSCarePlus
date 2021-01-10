@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIColor {
-
   @nonobjc class var black: UIColor {
     return UIColor(white: 0.0, alpha: 1.0)
   }
@@ -37,5 +36,4 @@ extension UIColor {
   @nonobjc class var veryLightPink: UIColor {
     return UIColor(white: 206.0 / 255.0, alpha: 1.0)
   }
-
 }
