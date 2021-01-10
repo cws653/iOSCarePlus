@@ -8,19 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var logoView: UIView!
-    @IBOutlet weak var logoViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var backgroundImageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var logoView: UIView!
+    @IBOutlet private weak var logoViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var backgroundImageViewLeadingConstraint: NSLayoutConstraint!
+    
+    @IBAction private func logoTabAction(_ sender: UITapGestureRecognizer) {
+        self.blinkLogoAnimation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         logoView.layer.cornerRadius = 15
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animationSettingDefault()
         appearLogoViewAnimation() { [weak self] in
             self?.slideBackgroundImageAnimation()
-            self?.blinkLogoAnimation()
         }
     }
     private func animationSettingDefault() {
@@ -44,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
     private func blinkLogoAnimation() {
-        UIView.animateKeyframes(withDuration: 1, delay: 1, options: [.repeat, .autoreverse]) { [weak self] in
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) { [weak self] in
             self?.logoView.alpha = 0
         }
     }

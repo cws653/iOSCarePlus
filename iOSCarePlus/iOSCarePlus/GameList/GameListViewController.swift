@@ -9,7 +9,31 @@ import UIKit
 import Alamofire
 
 class GameListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var newButton: SelectTableButton!
+    @IBOutlet private weak var saleButton: SelectTableButton!
+    @IBOutlet private weak var selectedLineCenterConstraints: NSLayoutConstraint!
+    @IBAction private func newButtonTouchUp(_ sender: UIButton) {
+        newButton.isSelected = true
+        saleButton.isSelected = false
+        
+        UIView.animate(withDuration: 0.1) {
+            self.selectedLineCenterConstraints.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        selectedLineCenterConstraints.constant = 0
+    }
+    @IBAction private func saleButtonTouchUp(_ sender: UIButton) {
+        newButton.isSelected = false
+        saleButton.isSelected = true
+        
+        let constant = saleButton.center.x - newButton.center.x
+        
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            self?.selectedLineCenterConstraints.constant = constant
+            self?.view.layoutIfNeeded()
+        }
+    }
+    @IBOutlet private weak var tableView: UITableView!
     private var newGameListURL: String {
         "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
@@ -24,12 +48,10 @@ class GameListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
         setTableViewDefault()
         newGameListApiCall()
     }
-    
     private func setTableViewDefault() {
         tableView.tableFooterView = UIView()
     }

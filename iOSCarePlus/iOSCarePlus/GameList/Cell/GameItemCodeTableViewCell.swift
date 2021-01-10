@@ -32,8 +32,7 @@ class GameItemCodeTableViewCell: UITableViewCell {
             gameImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             gameImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             gameImageView.heightAnchor.constraint(equalToConstant: 69),
-            gameImageView.widthAnchor.constraint(equalToConstant: 122),
-            
+            gameImageView.widthAnchor.constraint(equalToConstant: 122)
         ])
         gameImageView.backgroundColor = .red
         
