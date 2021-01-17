@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet private weak var backgroundImageViewLeadingConstraint: NSLayoutConstraint!
     
     @IBAction private func logoTabAction(_ sender: UITapGestureRecognizer) {
-        self.blinkLogoAnimation()
+        self.blinkLogoAnimation() { [weak self] in
+            self?.logoView.alpha = 1
+        }
     }
     
     override func viewDidLoad() {
@@ -48,9 +50,11 @@ class ViewController: UIViewController {
             self?.view.layoutIfNeeded()
         }
     }
-    private func blinkLogoAnimation() {
+    private func blinkLogoAnimation(completion: @escaping () -> Void) {
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.autoreverse]) { [weak self] in
             self?.logoView.alpha = 0
+        } completion: { _ in
+            completion()
         }
     }
 }
